@@ -1,4 +1,4 @@
-# Unraveling Complex Aberration Cues with Transformer
+# Deep Depth from Focus with Transformer
 
 ## Requirements
 * Python == 3.8.18
@@ -26,6 +26,21 @@
 [Middlebury_FS](https://drive.google.com/file/d/1FDXf47Qp1-dT_C7bo30ZySvvPAgJf5FU/view?usp=sharing)
 
 * Put the datasets in folders `Datasets`
+
+### Dataset Characteristics
+
+| Dataset | Abbr. | GT Type | GT Range | Unit | Slices | Resolution | Delta Metrics |
+|---------|-------|---------|----------|------|--------|------------|---------------|
+| DDFF-12-Scene | ddff | Depth | ~0.14 - 2.8 (normalized 0-1) | m | 10 | 224x224 / 384x576 | Applicable |
+| DefocusNet (FS-6) | def | Depth | 0.1 - 1.5 | m | 5 | 256x256 | Applicable |
+| 4D Light Field (HCI) | hci | Disparity | Negative possible | px | varies | 256x256 / 512x512 | Not applicable |
+| FlyingThings3D | fly | Disparity | Negative possible (masked to 0) | px | 15 | 256x256 / 540x960 | Not applicable |
+| Middlebury | - | Depth | 10 - 60 | arbitrary | 15 | varies | Applicable |
+
+**Notes:**
+- **Delta metrics** (delta1, delta2, delta3) require positive GT values. For disparity datasets (HCI, FlyingThings3D) that may contain negative values, use MAE, MSE, RMSE, and Bumpiness instead.
+- **Depth** represents the distance from camera to object (always positive).
+- **Disparity** represents pixel displacement between stereo views (can be negative depending on direction).
 
 ### 2. Test
 * Dataset abbr.
