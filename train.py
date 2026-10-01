@@ -13,7 +13,7 @@ from torch.cuda.amp import autocast, GradScaler
 
 from Dataloader import FocalStackDDFFH5Reader, FS6_dataset, HCI_dataset, FlyingThings3d
 from metrics import *
-from model import DDFA
+from model import DDFT
 
 
 # args
@@ -41,7 +41,7 @@ batch_size = args.batch_size
 smooth_loss = nn.SmoothL1Loss()
 
 # model
-model=DDFA()
+model=DDFT()
 model=model.cpu()
 model = nn.DataParallel(model)
 model=model.cuda()

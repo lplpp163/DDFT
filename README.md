@@ -157,7 +157,7 @@ Stack sizes used in the paper are 10 (DDFF), 10 (4D Light Field), 15 (FlyingThin
 ## Repository layout
 
 ```
-model.py        network: DDFA (full model), Swin3DLayer, DownBlock, UpBlock, CSA (= UGCA in the paper)
+model.py        network: DDFT (full model), Swin3DLayer, DownBlock, UpBlock, CSA (= UGCA in the paper)
 VideoSwin.py    3D shifted-window Transformer block (from Video Swin Transformer [8])
 Dataloader.py   loaders for the five datasets
 metrics.py      MSE, RMSE, AbsRel, SqRel, Bump, δ

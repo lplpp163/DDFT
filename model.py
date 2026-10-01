@@ -8,9 +8,9 @@ import numpy as np
 
 from VideoSwin import SwinTransformerBlock3D, get_window_size, compute_mask
 
-class DDFA(nn.Module):
+class DDFT(nn.Module):
     def __init__(self, W=16, D=4, window_size=(4,4,4)): # W: model width, D: model depth
-        super(DDFA, self).__init__()
+        super(DDFT, self).__init__()
         
         self.stem = nn.Sequential(
             conv_bn_act(3, W, kernel_size=1),

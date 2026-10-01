@@ -9,7 +9,7 @@ from torch.utils.data import DataLoader
 
 from Dataloader import FS6_dataset, HCI_dataset, Middlebury, DDFF12dataset_benchmark
 from metrics import *
-from model import DDFA
+from model import DDFT
 
 import matplotlib.pyplot as plt
 
@@ -41,7 +41,7 @@ test_loader = DataLoader(test_set)
 num_test = len(test_set)
 
 # model
-model=DDFA()
+model=DDFT()
 model=model.cpu()
 model = nn.DataParallel(model)
 model=model.cuda()
